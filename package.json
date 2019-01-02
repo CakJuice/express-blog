@@ -15,6 +15,7 @@
     "babel-register": "^6.26.0",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "nunjucks": "^3.1.6",
     "pg": "^7.7.1",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.42.0",

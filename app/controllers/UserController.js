@@ -15,7 +15,7 @@ export default class UserController extends Controller {
   }
 
   static index(req, res) {
-    res.send("User Index");
+    res.render('user/index.html');
   }
 
   static create(req, res) {
