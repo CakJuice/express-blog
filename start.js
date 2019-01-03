@@ -1,5 +1,5 @@
 require('babel-register')({
-  presets: ['es2015']
+  presets: ['env']
 });
 
 module.exports = require('./main');
