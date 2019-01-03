@@ -23,20 +23,15 @@ const User = db.define('cj_user', {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  createdAt: {
-    type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW,
-  },
-  updatedAt: {
-    type: Sequelize.DATE,
-    defaultValue: Sequelize.NOW,
-  },
+}, {
+  timestamps: true,
+  underscored: true,
+  freezeTableName: true,
+  tableName: 'cj_user',
 });
 
 User.hashPassword = function(password) {
-  argon2.hash(password, process.env.SECRET).then(hash => {
-    this.password = hash;
-  });
+  return argon2.hash(password, process.env.SECRET);
 }
 
 module.exports = User;
