@@ -1,7 +1,7 @@
-import Sequelize from 'sequelize';
-import db from '../db';
-import argon2 from 'argon2';
-import 'dotenv/config';
+const Sequelize = require('sequelize');
+const argon2 = require('argon2');
+require('dotenv').config();
+const db = require('../db');
 
 const User = db.define('cj_user', {
   id: {
@@ -39,4 +39,4 @@ User.hashPassword = function(password) {
   });
 }
 
-export default User;
+module.exports = User;

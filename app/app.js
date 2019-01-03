@@ -1,6 +1,6 @@
-import express from 'express';
-import router from './router';
-import nunjucks from 'nunjucks';
+const express = require('express');
+const nunjucks = require('nunjucks');
+const router = require('./router');
 
 const app = express();
 
@@ -11,4 +11,4 @@ nunjucks.configure('app/views', {
 
 app.use(router);
 
-export default app;
+module.exports = app;

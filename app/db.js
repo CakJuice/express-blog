@@ -1,5 +1,5 @@
-import Sequelize from 'sequelize';
-import 'dotenv/config';
+const Sequelize = require('sequelize');
+require('dotenv').config();
 
 // using sequelize for ORM
 const db = new Sequelize(process.env.DB_URL);
@@ -12,4 +12,4 @@ db.authenticate()
     console.error('Unable to connect to the database:', err);
   });
 
-export default db;
+module.exports = db;

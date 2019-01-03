@@ -1,5 +1,5 @@
-import express from 'express';
-import userController from "./controllers/userController";
+const express = require('express');
+const userController = require('./controllers/userController');
 
 const router = express.Router();
 
@@ -8,4 +8,4 @@ router.get('/about', (req, res) => res.send("About page"));
 
 router.get('/user', (req, res) => userController.index(req, res));
 
-export default router;
+module.exports = router;
