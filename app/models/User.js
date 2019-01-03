@@ -1,5 +1,7 @@
 import Sequelize from 'sequelize';
 import db from '../db';
+import argon2 from 'argon2';
+import 'dotenv/config';
 
 const User = db.define('cj_user', {
   id: {
@@ -30,5 +32,11 @@ const User = db.define('cj_user', {
     defaultValue: Sequelize.NOW,
   },
 });
+
+User.hashPassword = function(password) {
+  argon2.hash(password, process.env.SECRET).then(hash => {
+    this.password = hash;
+  });
+}
 
 export default User;
